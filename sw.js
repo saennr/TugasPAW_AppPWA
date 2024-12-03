@@ -1,12 +1,12 @@
 const CACHE_NAME = 'pwa-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/offline.html',
-  '/about.html',
-  '/images/icons/new-icon-192x192.png',
-  '/images/icons/new-icon-512x512.png'
+  '/TugasPAW_AppPWA/',
+  '/TugasPAW_AppPWA/index.html',
+  '/TugasPAW_AppPWA/style.css',
+  '/TugasPAW_AppPWA/offline.html',
+  '/TugasPAW_AppPWA/about.html',
+  '/TugasPAW_AppPWA/images/icons/new-icon-192x192.png',
+  '/TugasPAW_AppPWA/images/icons/new-icon-512x512.png'
 ];
 
 // Install Service Worker
@@ -37,7 +37,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      return response || fetch(event.request).catch(() => caches.match('/offline.html'));
+      return response || fetch(event.request).catch(() => caches.match('/TugasPAW_AppPWA/offline.html'));
     })
   );
 });
@@ -46,7 +46,7 @@ self.addEventListener('fetch', event => {
 self.addEventListener('notificationclick', event => {
     event.notification.close(); 
     if (event.action === 'about') {
-        event.waitUntil(clients.openWindow('/about.html')); 
+        event.waitUntil(clients.openWindow('/TugasPAW_AppPWA/about.html')); 
     } else {
         event.waitUntil(clients.openWindow('/')); 
     }
