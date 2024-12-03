@@ -1,6 +1,5 @@
 if ('Notification' in window && 'serviceWorker' in navigator) {
-    // Daftarkan Service Worker
-    navigator.serviceWorker.register('/sw.js').then(registration => {
+    navigator.serviceWorker.register('/TugasPAW_AppPWA/sw.js').then(registration => {
         console.log('Service Worker registered:', registration);
 
         // Meminta izin notifikasi
@@ -11,10 +10,10 @@ if ('Notification' in window && 'serviceWorker' in navigator) {
                     // Menampilkan notifikasi saat tombol diklik
                     registration.showNotification('Welcome to My PWA!', {
                         body: 'Click here to learn more about this app.',
-                        icon: '/images/icons/new-icon-192x192.png',
+                        icon: '/TugasPAW_AppPWA/images/icons/new-icon-192x192.png',
                         tag: 'welcome-notification',
                         actions: [
-                            { action: 'about', title: 'About App', icon: '/images/icons/new-icon-512x512.png' }
+                            { action: 'about', title: 'About App', icon: '/TugasPAW_AppPWA/images/icons/new-icon-512x512.png' }
                         ]
                     });
                 });
